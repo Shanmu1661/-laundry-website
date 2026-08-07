@@ -1,0 +1,7 @@
+/* Show the injected mobile login icon on tablet and desktop and style it */
+.mobile-login-icon{display:none}
+@media (min-width:768px){
+  .mobile-login-icon{display:inline-flex !important;align-items:center;justify-content:center;margin-left:.75rem;padding:.45rem .6rem;border-radius:8px;border:1px solid var(--line);background:var(--white);color:var(--brand);text-decoration:none}
+  .mobile-login-icon svg{width:18px;height:18px}
+  .navbar .mobile-login-icon{order:3;margin-left:auto}
+}

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Book Pickup | LaundryPro</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+      main {
+        padding-top: 64px;
+      }
+      .breadcrumb-banner {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+      @media (max-width: 991px) {
+        main {
+          padding-top: 88px;
+        }
+      }
+    </style>
+      <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+</head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg fixed-top"
+      aria-label="Primary navigation"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img src="assets/images/logo.png" alt="LaundryPro Logo" width="30" height="30" class="d-inline-block align-top logo-img"><span>LaundryPro</span></a><button
+          class="navbar-toggler menu-toggle-icon"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          data-menu-toggle
+        >
+          <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <div class="collapse navbar-collapse" data-menu>
+          <ul class="navbar-nav mx-auto gap-lg-1">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pricing.html">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          <button
+            class="btn btn-sm btn-outline-brand rounded-circle d-inline-flex align-items-center justify-content-center me-lg-2"
+            style="width: 38px; height: 38px"
+            type="button"
+            data-theme
+            aria-label="Toggle light and dark mode"
+            title="Toggle theme"
+          >
+            <span data-theme-icon aria-hidden="true">?</span></button
+          ><a class="btn nav-booking me-lg-2" href="booking.html">Book now</a
+          ><button
+            class="btn btn-sm btn-light text-brand fw-bold"
+            type="button"
+            data-direction
+            aria-label="Switch to RTL layout"
+            title="Switch to RTL layout"
+          >
+            RTL
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="breadcrumb-banner">
+        <div class="container">
+          <h1 class="display-5 fw-bold">Schedule a pickup</h1>
+          <p>Tell us where and when — we’ll handle the rest.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-8">
+              <form id="booking-form" class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Full name</label
+                    ><input class="form-control" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone</label
+                    ><input type="tel" class="form-control" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email</label
+                    ><input type="email" class="form-control" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Service type</label
+                    ><select class="form-select" required>
+                      <option value="">Select service</option>
+                      <option>Wash & Fold</option>
+                      <option>Dry Cleaning</option>
+                      <option>Ironing Only</option>
+                      <option>Express Laundry</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Pickup address</label
+                    ><input class="form-control" required />
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Pickup date</label
+                    ><input type="date" class="form-control" required />
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Pickup time</label
+                    ><input type="time" class="form-control" required />
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Delivery date</label
+                    ><input type="date" class="form-control" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Quantity (items)</label
+                    ><input type="number" class="form-control" min="1" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Estimated weight (kg)</label
+                    ><input type="number" class="form-control" min="1" />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label"
+                      >Notes / special instructions</label
+                    ><textarea class="form-control" rows="4"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-brand btn-lg">
+                      Confirm request
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <aside class="col-lg-4">
+              <div class="price-card">
+                <h4>Booking summary</h4>
+                <hr />
+                <p class="text-secondary">
+                  Your final quote is confirmed after item inspection.
+                </p>
+                <div class="d-flex justify-content-between">
+                  <span>Pickup & delivery</span><b>Included</b>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <span>Minimum order</span><b>₹299</b>
+                </div>
+                <hr />
+                <small class="text-secondary"
+                  >No payment is collected at this step.</small
+                >
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      document
+        .getElementById("booking-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (this.checkValidity()) {
+            window.location.href = "contact-confirmation.html";
+          } else {
+            this.classList.add("was-validated");
+          }
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

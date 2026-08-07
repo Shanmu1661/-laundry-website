@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="390" viewBox="0 0 800 390">
+  <rect width="100%" height="100%" fill="#f4f8ff" />
+  <g fill="#10213c" opacity="0.08">
+    <circle cx="120" cy="120" r="40" />
+    <circle cx="200" cy="120" r="40" />
+    <rect x="80" y="180" width="240" height="16" rx="8" />
+  </g>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" fill="#10213c">Laundry team</text>
+</svg>
