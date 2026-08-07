@@ -131,6 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show a signed-in customer's account menu, or the regular login icon.
     if (customerName && !nav.querySelector('.nav-user-menu')) {
+      // Hide static login & signup buttons
+      nav.querySelectorAll('.nav-login-btn, .nav-signup-btn').forEach(btn => btn.classList.add('d-none'));
+
       const accountMenu = document.createElement('div');
       accountMenu.className = 'nav-user-menu d-none d-lg-block ms-2';
       accountMenu.innerHTML = `
@@ -141,7 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="nav-user-dropdown" role="menu">
           <span class="nav-user-greeting">Signed in as</span>
           <strong class="nav-user-menu-name"></strong>
-          <button type="button" data-logout role="menuitem"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+          <a href="user-dashboard.html" role="menuitem" class="d-flex align-items-center gap-2"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+          <button type="button" data-logout role="menuitem" class="d-flex align-items-center gap-2"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
         </div>`;
       accountMenu.querySelector('.nav-user-name').textContent = customerName;
       accountMenu.querySelector('.nav-user-menu-name').textContent = customerName;
@@ -160,23 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.removeItem('laundryProCustomerName');
         location.href = 'index.html';
       });
-    } else if (!nav.querySelector('.nav-login-icon')) {
-      const loginIcon = document.createElement('a');
-      loginIcon.className =
-        'btn btn-sm btn-outline-brand rounded-circle d-none d-lg-inline-flex align-items-center justify-content-center ms-2 nav-login-icon';
-      loginIcon.href = 'login.html';
-      loginIcon.setAttribute('aria-label', 'Login');
-      loginIcon.title = 'Login';
-      loginIcon.innerHTML =
-        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="8" r="5"></circle></svg>';
-
-      const directionButton = nav.querySelector('[data-direction]');
-      if (directionButton) {
-        directionButton.insertAdjacentElement('afterend', loginIcon);
-      } else {
-        const bookingButton = nav.querySelector('.nav-booking');
-        bookingButton?.insertAdjacentElement('afterend', loginIcon);
-      }
+    } else {
+      // Ensure static buttons are shown if no user is signed in
+      nav.querySelectorAll('.nav-login-btn, .nav-signup-btn').forEach(btn => btn.classList.remove('d-none'));
     }
   }
 
@@ -283,6 +273,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const name = email.split('@')[0].replace(/[._-]+/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
     localStorage.setItem('laundryProCustomerName', name || 'Customer');
   });
+
+  const customerRegister = document.querySelector('#customerRegister');
+  customerRegister?.addEventListener('submit', () => {
+    const name = document.querySelector('#registerName')?.value.trim();
+    if (!name) return;
+    localStorage.setItem('laundryProCustomerName', name);
+  });
+
+  // Social Auth Handler mock
+  window.handleSocialAuth = function (provider) {
+    alert(`Connecting to ${provider} OAuth...`);
+    localStorage.setItem('laundryProCustomerName', `${provider} User`);
+    location.href = 'user-dashboard.html';
+  };
 
   // Add a consistent copyright notice to every shared site footer.
   document.querySelectorAll('footer.footer').forEach((footer) => {

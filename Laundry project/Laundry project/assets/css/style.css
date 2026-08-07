@@ -10,11 +10,12 @@
 .page-header .breadcrumb-item.active{color:rgba(255,255,255,.65)}
 .page-header h1{font-weight:800;font-size:clamp(2rem,4vw,2.75rem);letter-spacing:-.04em;margin-bottom:.5rem;color:#fff}
 .page-header p{color:rgba(255,255,255,.88);font-size:1.1rem;max-width:560px;margin-bottom:0}
-.page-header--services{background-image:url('https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1400&q=80')}
-.page-header--gallery{background-image:url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=1400&q=80')}
-.page-header--contact{background-image:url('https://images.unsplash.com/photo-1556745753-b09070ec0ece?auto=format&fit=crop&w=1400&q=80')}
+.page-header--services{background-image:url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1400&q=80')}
+.page-header--gallery{background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80')}
+.page-header--contact{background-image:url('https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1400&q=80')}
 .page-header--about{background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80')}
-.page-header--journal{background-image:url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1400&q=80')}
+.page-header--journal{background-image:url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=1400&q=80')}
+.page-header--pricing{background-image:url('https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=1400&q=80')}
 .page-header--wash-fold{background-image:url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1400&q=80')}
 .page-header--dry-cleaning{background-image:url('https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1400&q=80')}
 .page-header--ironing{background-image:url('https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1400&q=80')}
@@ -395,3 +396,254 @@ body.dark .blog-page .blog-card .read-more-btn:hover {
   color: #fff !important;
 }
 
+/* Home 2 Hero Background & Overlay styling */
+.home-two .hero {
+  background-image: linear-gradient(rgba(248, 251, 255, 0.88), rgba(248, 251, 255, 0.88)), url('../images/home-2-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 0.3s ease;
+}
+body.dark.home-two .hero {
+  background-image: linear-gradient(rgba(11, 20, 35, 0.9), rgba(11, 20, 35, 0.9)), url('../images/home-2-hero.jpg');
+}
+
+/* Navbar Buttons styling */
+.navbar .btn-outline-brand, .navbar .btn-brand {
+  padding: 0.45rem 1rem !important;
+  font-size: 0.875rem !important;
+  border-radius: 8px !important;
+}
+
+/* Social Buttons on Auth Pages */
+.btn-social-google {
+  background-color: #fff !important;
+  color: #1f2937 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 10px !important;
+  padding: 0.65rem 1.2rem !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.btn-social-google:hover {
+  background-color: #f9fafb !important;
+  border-color: #c7d2fe !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+.btn-social-apple {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #000 !important;
+  border-radius: 10px !important;
+  padding: 0.65rem 1.2rem !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.btn-social-apple:hover {
+  background-color: #1f2937 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+body.dark .btn-social-google {
+  background-color: #1f2937 !important;
+  color: #f9fafb !important;
+  border-color: #374151 !important;
+}
+body.dark .btn-social-google:hover {
+  background-color: #374151 !important;
+}
+body.dark .btn-social-apple {
+  background-color: #f9fafb !important;
+  color: #111827 !important;
+  border-color: #f9fafb !important;
+}
+body.dark .btn-social-apple:hover {
+  background-color: #e5e7eb !important;
+}
+
+/* Redesigned Footer Links & Social Media Icons */
+.footer-links a {
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  font-size: 0.9rem;
+}
+.footer-links a:hover {
+  color: var(--brand) !important;
+  padding-left: 4px;
+}
+.social-icons a {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  color: #b8c6db !important;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.social-icons a:hover {
+  background: var(--brand);
+  color: #fff !important;
+  transform: translateY(-3px);
+}
+.footer-copyright {
+  border-top-color: rgba(184, 198, 219, 0.1) !important;
+}
+
+/* Map wrapper styling */
+.map-container {
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+.map-container iframe {
+  display: block;
+}
+
+/* Category Page Specific Elements */
+.page-header--category {
+  background-size: cover;
+  background-position: center;
+}
+.category-banner-home-laundry {
+  background-image: linear-gradient(rgba(16, 33, 60, 0.8), rgba(16, 33, 60, 0.8)), url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1200&q=80') !important;
+}
+.category-banner-fabric-care {
+  background-image: linear-gradient(rgba(16, 33, 60, 0.8), rgba(16, 33, 60, 0.8)), url('https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1200&q=80') !important;
+}
+.category-banner-sustainable {
+  background-image: linear-gradient(rgba(16, 33, 60, 0.8), rgba(16, 33, 60, 0.8)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80') !important;
+}
+.category-banner-behind-scenes {
+  background-image: linear-gradient(rgba(16, 33, 60, 0.8), rgba(16, 33, 60, 0.8)), url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80') !important;
+}
+.category-banner-special-care {
+  background-image: linear-gradient(rgba(16, 33, 60, 0.8), rgba(16, 33, 60, 0.8)), url('https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1200&q=80') !important;
+}
+
+/* Unique & Premium Modern UI System Extensions */
+
+/* Custom Smooth Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--soft);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(23, 107, 223, 0.3);
+  border-radius: 20px;
+  border: 2px solid var(--soft);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand);
+}
+
+/* Floating Hero Orbs Animation */
+@keyframes float-orb-one {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.08); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes float-orb-two {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, 40px) scale(1.12); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+.hero .orb-one {
+  animation: float-orb-one 14s ease-in-out infinite;
+}
+.hero .orb-two {
+  animation: float-orb-two 18s ease-in-out infinite;
+}
+
+/* Premium Gradient Typography */
+.hero h1, .section-title, .stat-card h3 {
+  background: linear-gradient(135deg, var(--ink) 45%, var(--brand) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+body.dark .hero h1, body.dark .section-title, body.dark .stat-card h3 {
+  background: linear-gradient(135deg, #ffffff 40%, #6ab2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Page Header Specific Light Gradient (Always white-to-blue for dark backgrounds) */
+.page-header h1 {
+  background: linear-gradient(135deg, #ffffff 40%, #cce3ff 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block;
+}
+
+/* Glassmorphic Cards & Elevating Shadows */
+.service-card, .price-card, .blog-card, .stat-card, .contact-card, .price-card.featured {
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(23, 107, 223, 0.08) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.service-card:hover, .price-card:hover, .blog-card:hover, .stat-card:hover, .contact-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 28px 56px rgba(23, 107, 223, 0.14) !important;
+  border-color: rgba(23, 107, 223, 0.28) !important;
+}
+body.dark .service-card, body.dark .price-card, body.dark .blog-card, body.dark .stat-card, body.dark .contact-card {
+  border-color: rgba(36, 54, 82, 0.5) !important;
+}
+body.dark .service-card:hover, body.dark .price-card:hover, body.dark .blog-card:hover, body.dark .stat-card:hover, body.dark .contact-card:hover {
+  box-shadow: 0 28px 56px rgba(11, 20, 35, 0.6) !important;
+  border-color: rgba(106, 178, 255, 0.35) !important;
+}
+
+/* Subtle Pulsing Process Steps */
+.process-num {
+  position: relative;
+  z-index: 1;
+}
+.process-num::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px dashed rgba(23, 107, 223, 0.35);
+  animation: rotate-dashed 24s linear infinite;
+  z-index: -1;
+}
+@keyframes rotate-dashed {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Button Micro-Animations & Glow Effects */
+.btn-brand, .btn-social-google, .btn-social-apple, .nav-booking {
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.btn-brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(23, 107, 223, 0.35) !important;
+}
+.btn-social-google:hover, .btn-social-apple:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+.nav-booking:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Navigation Link Colors (Hover and Active) */
+.navbar .nav-link:hover, 
+.navbar .nav-link:focus, 
+.navbar .nav-link.active {
+  color: var(--brand) !important;
+  transition: color 0.2s ease;
+}
+body.dark .navbar .nav-link:hover, 
+body.dark .navbar .nav-link:focus, 
+body.dark .navbar .nav-link.active {
+  color: #6ab2ff !important;
+}
