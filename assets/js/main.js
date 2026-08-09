@@ -127,47 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Active link highlighting
     setActiveNavLink(nav);
 
-    const customerName = localStorage.getItem('laundryProCustomerName');
-
-    // Show a signed-in customer's account menu, or the regular login icon.
-    if (customerName && !nav.querySelector('.nav-user-menu')) {
-      // Hide static login & signup buttons
-      nav.querySelectorAll('.nav-login-btn, .nav-signup-btn').forEach(btn => btn.classList.add('d-none'));
-
-      const accountMenu = document.createElement('div');
-      accountMenu.className = 'nav-user-menu d-none d-lg-block ms-2';
-      accountMenu.innerHTML = `
-        <button class="nav-user-trigger" type="button" aria-expanded="false" aria-label="Open account menu">
-          <span class="nav-user-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="8" r="5"></circle></svg></span>
-          <span class="nav-user-name"></span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </button>
-        <div class="nav-user-dropdown" role="menu">
-          <span class="nav-user-greeting">Signed in as</span>
-          <strong class="nav-user-menu-name"></strong>
-          <a href="user-dashboard.html" role="menuitem" class="d-flex align-items-center gap-2"><i class="fa-solid fa-gauge"></i> Dashboard</a>
-          <button type="button" data-logout role="menuitem" class="d-flex align-items-center gap-2"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
-        </div>`;
-      accountMenu.querySelector('.nav-user-name').textContent = customerName;
-      accountMenu.querySelector('.nav-user-menu-name').textContent = customerName;
-      const directionButton = nav.querySelector('[data-direction]');
-      const bookingButton = nav.querySelector('.nav-booking');
-      (directionButton || bookingButton)?.insertAdjacentElement('afterend', accountMenu);
-
-      const trigger = accountMenu.querySelector('.nav-user-trigger');
-      trigger.addEventListener('click', (event) => {
-        event.stopPropagation();
-        const open = accountMenu.classList.toggle('is-open');
-        trigger.setAttribute('aria-expanded', String(open));
-      });
-      document.addEventListener('click', () => accountMenu.classList.remove('is-open'));
-      accountMenu.querySelector('[data-logout]').addEventListener('click', () => {
-        localStorage.removeItem('laundryProCustomerName');
-        location.href = 'index.html';
-      });
-    } else {
-      // Ensure static buttons are shown if no user is signed in
-      nav.querySelectorAll('.nav-login-btn, .nav-signup-btn').forEach(btn => btn.classList.remove('d-none'));
-    }
+    // Keep the original navbar layout on every page.
+    nav.querySelector('.nav-user-menu')?.remove();
+    nav.querySelectorAll('.nav-login-btn, .nav-signup-btn').forEach((btn) => {
+      btn.classList.remove('d-none');
+    });
   }
 
   // Sticky navbar & back-to-top
@@ -285,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.handleSocialAuth = function (provider) {
     alert(`Connecting to ${provider} OAuth...`);
     localStorage.setItem('laundryProCustomerName', `${provider} User`);
-    location.href = 'user-dashboard.html';
+    location.href = 'index.html';
   };
 
   // Add a consistent copyright notice to every shared site footer.
