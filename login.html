@@ -112,6 +112,44 @@
       <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 </head>
   <body class="bg-soft">
+    <nav
+      class="navbar navbar-expand-lg fixed-top"
+      aria-label="Primary navigation"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img src="assets/images/logo.png" alt="LaundryPro Logo" width="30" height="30" class="d-inline-block align-top logo-img"><span>LaundryPro</span></a><button
+          class="navbar-toggler menu-toggle-icon"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          data-menu-toggle
+        >
+          <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <div class="collapse navbar-collapse" data-menu>
+          <div class="ms-auto d-flex align-items-center gap-2">
+            <button
+              class="btn btn-sm btn-outline-brand rounded-circle d-inline-flex align-items-center justify-content-center"
+              style="width: 38px; height: 38px"
+              type="button"
+              data-theme
+              aria-label="Toggle light and dark mode"
+              title="Toggle theme"
+            >
+              <span data-theme-icon aria-hidden="true">☾</span></button
+            ><button
+              class="btn btn-sm btn-light text-brand fw-bold"
+              type="button"
+              data-direction
+              aria-label="Switch to RTL layout"
+              title="Switch to RTL layout"
+            >
+              RTL
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <main class="min-vh-100 d-grid align-items-center">
       <div class="container py-5">

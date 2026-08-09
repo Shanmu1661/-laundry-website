@@ -184,10 +184,10 @@ body.dark [data-direction]:hover,body.dark [data-direction]:focus{
 }
 .nav-booking i,[data-direction] i{font-size:.9em;line-height:1}
 [data-direction]{display:inline-flex;align-items:center;gap:.45rem}
-.navbar-collapse>.nav-login-btn{order:2}
-.navbar-collapse>.nav-signup-btn{order:3}
-.navbar-collapse>[data-theme]{order:4}
-.navbar-collapse>[data-direction]{order:5}
+.navbar-collapse>[data-theme]{order:1;margin-right:.75rem}
+.navbar-collapse>[data-direction]{order:2;margin-right:.75rem}
+.navbar-collapse>.nav-login-btn{order:3;margin-right:.75rem}
+.navbar-collapse>.nav-signup-btn{order:4}
 .price .price-unit{display:inline-block;margin-inline-start:.42rem;font-size:.38em;font-weight:700;letter-spacing:0;line-height:1;vertical-align:baseline;white-space:nowrap;color:var(--muted)}
 
 /* User dashboard mobile layout */
