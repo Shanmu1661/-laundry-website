@@ -182,16 +182,30 @@ document.addEventListener('DOMContentLoaded', () => {
     if (directionLabel) directionLabel.textContent = isRtl ? 'LTR' : 'RTL';
     else if (direction) direction.textContent = isRtl ? 'LTR' : 'RTL';
   };
-  applyDirection(false);
+  // Read previously saved direction from localStorage so the choice
+  // persists across page navigations.
+  const savedDirection = localStorage.getItem('laundryProDirection');
+  const initialIsRtl = savedDirection === 'rtl';
+  applyDirection(initialIsRtl);
+
   direction?.addEventListener('click', () => {
     const isRtl = document.documentElement.dir !== 'rtl';
     applyDirection(isRtl);
+    // Persist the user's choice so it applies on subsequent pages.
+    try {
+      localStorage.setItem('laundryProDirection', isRtl ? 'rtl' : 'ltr');
+    } catch (e) {
+      // ignore storage errors (e.g., privacy modes)
+    }
   });
 
   // Animated counters
   document.querySelectorAll('[data-counter]').forEach((el) => {
     const n = Number(el.dataset.counter || 0);
     if (!n) return;
+    // Ensure numeric counters remain left-to-right inside RTL pages
+    // by marking them with a bidi-isolation class.
+    el.classList.add('bidi-ltr', 'inline-block');
     let x = 0;
     const tick = () => {
       x += Math.ceil(n / 60);

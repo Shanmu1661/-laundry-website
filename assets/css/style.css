@@ -221,6 +221,57 @@ html[dir="rtl"] .nav-login-mobile{margin-left:0;margin-right:.5rem}
 @media (min-width:768px){html[dir="rtl"] .mobile-login-icon{margin-left:0;margin-right:.5rem}html[dir="rtl"] .navbar .mobile-login-icon{margin-left:0;margin-right:auto}}
 @media (max-width:991px){html[dir="rtl"] .navbar>.container>.mobile-login-icon,html[dir="rtl"] .navbar>.container>.nav-login-mobile{margin-inline-start:.5rem!important;margin-inline-end:0!important}}
 
+/* Bidirectional text handling
+  - Use content-driven base direction for text containers so punctuation
+    and numbers stay adjacent to their text when the page is RTL.
+  - Provide a reusable class `.bidi-ltr` for isolating explicit LTR runs
+    (numbers, phone numbers, prices, counters). This is applied dynamically
+    where numeric content is rendered (e.g. animated counters).
+*/
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] p,
+html[dir="rtl"] .lead,
+html[dir="rtl"] .section-title,
+html[dir="rtl"] .eyebrow,
+html[dir="rtl"] .quote-card p,
+html[dir="rtl"] .service-card h4,
+html[dir="rtl"] .price-card,
+html[dir="rtl"] .price,
+html[dir="rtl"] .check-list li,
+html[dir="rtl"] .nav-link,
+html[dir="rtl"] .dropdown-item,
+html[dir="rtl"] .btn,
+html[dir="rtl"] .stat-card,
+html[dir="rtl"] .footer-copyright,
+html[dir="rtl"] .accordion-button,
+html[dir="rtl"] .accordion-body {
+   /* Let the element determine its base direction from its content
+     so English/LTR runs and punctuation stay visually correct. */
+   unicode-bidi: plaintext;
+}
+
+/* Explicit LTR isolation class for inline numeric/content runs.
+  Apply this to elements that must always remain LTR (counters, prices,
+  phone numbers). It uses `isolate` so surrounding bidi text cannot
+  reorder the run, and `direction: ltr` to keep digits and punctuation
+  in natural LTR order. */
+.bidi-ltr {
+   direction: ltr;
+   unicode-bidi: isolate;
+}
+
+/* Also ensure counter and numeric displays render as inline blocks so
+  direction isolation doesn't break vertical rhythm or alignment. */
+.bidi-ltr.inline-block {
+   display: inline-block;
+}
+
+
 /* Shared footer copyright notice */
 .footer-copyright{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(184,198,219,.24);color:#b8c6db;text-align:center}
 
