@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="24" fill="#176bdf" opacity="0.1"/>
+  
+  <!-- Main water drop / laundry bubble -->
+  <g>
+    <!-- Outer circle representing a water droplet -->
+    <circle cx="24" cy="22" r="14" fill="none" stroke="#176bdf" stroke-width="1.5" opacity="0.6"/>
+    
+    <!-- Clean wash symbol - overlapping circles -->
+    <circle cx="18" cy="20" r="5" fill="#176bdf" opacity="0.7"/>
+    <circle cx="26" cy="18" r="5" fill="#176bdf" opacity="0.8"/>
+    <circle cx="30" cy="25" r="5" fill="#176bdf" opacity="0.7"/>
+    
+    <!-- Inner geometric pattern for cleanliness -->
+    <path d="M 24 12 L 28 20 L 20 20 Z" fill="#176bdf" opacity="0.9"/>
+  </g>
+  
+  <!-- Water wave accent at bottom -->
+  <path d="M 16 32 Q 20 30 24 32 T 32 32" stroke="#176bdf" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Brightness/freshness indicator -->
+  <circle cx="38" cy="12" r="3" fill="#ffd766" opacity="0.9"/>
+  <g stroke="#ffd766" stroke-width="1.5" stroke-linecap="round" opacity="0.7">
+    <line x1="38" y1="6" x2="38" y2="4"/>
+    <line x1="38" y1="20" x2="38" y2="22"/>
+    <line x1="44" y1="12" x2="46" y2="12"/>
+    <line x1="32" y1="12" x2="30" y2="12"/>
+  </g>
+</svg>
