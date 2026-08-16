@@ -16,11 +16,88 @@
 
     <link href="assets/css/style.css" rel="stylesheet" />
     <style>
+      body.register-page {
+        background: #eaf3fb;
+      }
+
+      .auth-topbar {
+        position: relative;
+        z-index: 10;
+        padding: 18px 0 0;
+      }
+
+      .auth-topbar .container {
+        max-width: 1280px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .auth-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        font-size: clamp(2rem, 2.2vw, 3rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .auth-brand img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .auth-toggle-group {
+        position: fixed;
+        top: 18px;
+        right: 26px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 30;
+      }
+
+      .auth-toggle-group [data-theme],
+      .auth-toggle-group [data-direction] {
+        border-radius: 14px;
+        border: 1px solid rgba(23, 107, 223, 0.18);
+        background: rgba(255, 255, 255, 0.82);
+        color: var(--brand);
+        box-shadow: 0 4px 14px rgba(19, 50, 92, 0.08);
+      }
+
+      .auth-toggle-group [data-theme] {
+        width: 42px;
+        height: 42px;
+        padding: 0;
+      }
+
+      .auth-toggle-group [data-direction] {
+        min-width: 92px;
+        height: 42px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        padding: 0 20px;
+      }
+
+      .register-page .auth-shell {
+        min-height: calc(100vh - 60px);
+        display: grid;
+        place-items: center;
+        padding: 40px 20px 60px;
+      }
+
       .login-card {
         width: 100%;
-        max-width: 460px;
-        padding: 40px 32px;
+        max-width: 520px;
+        padding: 34px 30px 28px;
+        border-radius: 28px;
+        border: 1px solid rgba(17, 24, 39, 0.04);
+        background: rgba(255, 255, 255, 0.8);
       }
+
       .brand-logo {
         font-weight: 900;
         font-size: 1.75rem;
@@ -28,11 +105,55 @@
         text-decoration: none;
         letter-spacing: -0.02em;
       }
+
+      .register-page .login-card .brand-logo {
+        font-size: 2.25rem;
+      }
+
+      .register-page .form-control {
+        height: 58px;
+        border-radius: 12px;
+        border-color: rgba(17, 24, 39, 0.14);
+        background: #f9fafb;
+        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
+      }
+
+      .register-page .btn-brand {
+        height: 52px;
+        border-radius: 12px;
+        font-weight: 700;
+      }
+
+      .register-page .form-check {
+        margin-top: 8px;
+      }
+
       @media (max-width: 575.98px) {
-        .login-card {
-          padding: 24px 20px;
-          border-radius: 16px;
+        .auth-topbar {
+          padding-top: 14px;
         }
+
+        .auth-brand {
+          font-size: 1.7rem;
+        }
+
+        .auth-toggle-group {
+          top: 14px;
+          right: 14px;
+          gap: 8px;
+        }
+
+        .auth-toggle-group [data-direction] {
+          min-width: 74px;
+          padding: 0 14px;
+        }
+
+        .login-card {
+          padding: 26px 20px 20px;
+          border-radius: 18px;
+        }
+
         .brand-logo {
           font-size: 1.45rem;
         }
@@ -40,47 +161,38 @@
     </style>
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   </head>
-  <body class="bg-soft">
-    <nav
-      class="navbar navbar-expand-lg fixed-top"
-      aria-label="Primary navigation"
-    >
+  <body class="register-page">
+    <header class="auth-topbar">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img src="assets/images/logo-new.svg" alt="LaundryPro Logo" width="32" height="32" class="d-inline-block align-top logo-img"><span>LaundryPro</span></a><button
-          class="navbar-toggler menu-toggle-icon"
-          type="button"
-          aria-label="Open navigation"
-          aria-expanded="false"
-          data-menu-toggle
-        >
-          <span class="menu-icon" aria-hidden="true"></span>
-        </button>
-        <div class="collapse navbar-collapse" data-menu>
-          <div class="ms-auto d-flex align-items-center gap-2">
-            <button
-              class="btn btn-sm btn-outline-brand rounded-circle d-inline-flex align-items-center justify-content-center"
-              style="width: 38px; height: 38px"
-              type="button"
-              data-theme
-              aria-label="Toggle light and dark mode"
-              title="Toggle theme"
-            >
-              <span data-theme-icon aria-hidden="true">☾</span></button
-            ><button
-              class="btn btn-sm btn-light text-brand fw-bold"
-              type="button"
-              data-direction
-              aria-label="Switch to RTL layout"
-              title="Switch to RTL layout"
-            >
-              RTL
-            </button>
-          </div>
-        </div>
+        <a class="auth-brand" href="index.html">
+          <img src="assets/images/logo-new.svg" alt="LaundryPro Logo" class="logo-img">
+          <span>LaundryPro</span>
+        </a>
       </div>
-    </nav>
+    </header>
 
-    <main class="min-vh-100 d-grid align-items-center">
+    <div class="auth-toggle-group" aria-label="Theme and language controls">
+      <button
+        class="btn btn-sm btn-outline-brand rounded-circle d-inline-flex align-items-center justify-content-center"
+        type="button"
+        data-theme
+        aria-label="Toggle light and dark mode"
+        title="Toggle theme"
+      >
+        <span data-theme-icon aria-hidden="true">☾</span>
+      </button>
+      <button
+        class="btn btn-sm btn-light text-brand fw-bold"
+        type="button"
+        data-direction
+        aria-label="Switch to RTL layout"
+        title="Switch to RTL layout"
+      >
+        RTL
+      </button>
+    </div>
+
+    <main class="auth-shell">
       <div class="container py-5">
         <div class="price-card login-card mx-auto shadow-lg">
           <div class="text-center mb-4">
