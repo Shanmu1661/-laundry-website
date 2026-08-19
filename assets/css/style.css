@@ -1240,11 +1240,77 @@ body.dark .timeline-badge {
   border-color: #9dc6ff;
 }
 
-/* Redesigned hover effect for the Contact button in service cards */
-.service-card a[href="contact.html"]:hover {
-  background-color: rgba(23, 107, 223, 0.08) !important;
+/* Globally apply consistent premium hover animations (opacity fade and vertical lift) to all buttons */
+.btn:hover, .btn:focus, .btn:active,
+.btn-brand:hover, .btn-brand:focus, .btn-brand:active,
+.btn-outline-brand:hover, .btn-outline-brand:focus, .btn-outline-brand:active,
+.nav-booking:hover, .nav-booking:focus, .nav-booking:active,
+[data-theme]:hover, [data-direction]:hover,
+.login-controls button:hover, .login-socials .btn:hover {
+  transform: translateY(-2px) !important;
+  opacity: 0.85 !important;
+  box-shadow: none !important;
+}
+
+/* Reset .btn-brand hover colors to match idle state */
+.btn-brand:hover, .btn-brand:focus, .btn-brand:active {
+  background: var(--brand) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* Reset .btn-outline-brand hover colors to match idle state */
+.btn-outline-brand:hover, .btn-outline-brand:focus, .btn-outline-brand:active {
+  background: transparent !important;
   color: var(--brand) !important;
   -webkit-text-fill-color: var(--brand) !important;
   border-color: var(--brand) !important;
-  box-shadow: 0 4px 12px rgba(23, 107, 223, 0.1) !important;
+}
+
+/* Reset Details buttons hover colors to match idle state */
+.filter-item .service-card .btn-outline-brand:hover,
+.filter-item .service-card .btn-outline-brand:focus,
+.filter-item .service-card .btn-outline-brand:active {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.82) !important;
+}
+
+/* Reset .nav-booking hover colors to match idle state */
+.nav-booking:hover, .nav-booking:focus, .nav-booking:active {
+  background: #fff !important;
+  color: #0f766e !important;
+  border-color: #0f766e !important;
+}
+body.dark .nav-booking:hover {
+  background: #fff !important;
+  color: #0f766e !important;
+  border-color: #fff !important;
+}
+
+/* Reset theme/direction buttons hover colors to match idle state */
+[data-theme]:hover, [data-direction]:hover {
+  background: var(--white) !important;
+  color: var(--brand) !important;
+  border-color: rgba(23, 107, 223, 0.28) !important;
+}
+
+/* Reset login buttons hover colors to match idle state */
+.login-controls button:hover {
+  background: rgba(255, 255, 255, 0.82) !important;
+  color: var(--brand) !important;
+}
+.login-socials .btn:hover {
+  background: var(--white) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+
+/* Reset service card contact buttons hover colors to match idle state */
+.service-card a[href="contact.html"]:hover {
+  background-color: transparent !important;
+  color: var(--brand) !important;
+  -webkit-text-fill-color: var(--brand) !important;
+  border-color: var(--brand) !important;
 }
