@@ -1,30 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
-  <!-- Background circle -->
-  <circle cx="24" cy="24" r="24" fill="#176bdf" opacity="0.1"/>
-  
-  <!-- Main water drop / laundry bubble -->
-  <g>
-    <!-- Outer circle representing a water droplet -->
-    <circle cx="24" cy="22" r="14" fill="none" stroke="#176bdf" stroke-width="1.5" opacity="0.6"/>
+  <defs>
+    <!-- Background Circle Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#176bdf" stop-opacity="0.02"/>
+    </radialGradient>
     
-    <!-- Clean wash symbol - overlapping circles -->
-    <circle cx="18" cy="20" r="5" fill="#176bdf" opacity="0.7"/>
-    <circle cx="26" cy="18" r="5" fill="#176bdf" opacity="0.8"/>
-    <circle cx="30" cy="25" r="5" fill="#176bdf" opacity="0.7"/>
-    
-    <!-- Inner geometric pattern for cleanliness -->
-    <path d="M 24 12 L 28 20 L 20 20 Z" fill="#176bdf" opacity="0.9"/>
-  </g>
+    <!-- Droplet Gradient -->
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e40af"/> <!-- Dark royal blue -->
+      <stop offset="60%" stop-color="#176bdf"/> <!-- Brand blue -->
+      <stop offset="100%" stop-color="#0ea5e9"/> <!-- Fresh cyan -->
+    </linearGradient>
+
+    <!-- Sparkle Gradient -->
+    <linearGradient id="sparkleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8e1"/>
+      <stop offset="100%" stop-color="#ffd766"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Soft outer background glow -->
+  <circle cx="24" cy="24" r="23" fill="url(#bgGrad)"/>
+
+  <!-- The Water Droplet Shape -->
+  <path d="M 24,5 C 24,5 39,20 39,29.5 C 39,37.5 32.3,44 24,44 C 15.7,44 9,37.5 9,29.5 C 9,20 24,5 24,5 Z" fill="url(#dropGrad)" />
+
+  <!-- Inside Droplet: Modern Hanger and Waves -->
+  <!-- Hanger Hook (white) -->
+  <path d="M 24,20 C 24,17.5 25,15.5 26.5,15.5 C 28,15.5 28.5,17 27.5,18.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.95"/>
+  <!-- Hanger Triangle Body (white) -->
+  <path d="M 24,20 L 16.5,25.5 C 15.8,26 16.2,27 17,27 L 31,27 C 31.8,27 32.2,26 31.5,25.5 L 24,20 Z" fill="#ffffff" opacity="0.95"/>
+  <!-- Waves at the bottom of the droplet -->
+  <path d="M 13,33 Q 18.5,31 24,33 T 35,33" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+  <path d="M 15,37 Q 19.5,35 24,37 T 33,37" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Bubbles (layered inside/outside for depth) -->
+  <!-- Translucent bubbles inside the droplet -->
+  <circle cx="17" cy="33" r="2.5" fill="#ffffff" opacity="0.3"/>
+  <circle cx="30" cy="32" r="1.5" fill="#ffffff" opacity="0.4"/>
   
-  <!-- Water wave accent at bottom -->
-  <path d="M 16 32 Q 20 30 24 32 T 32 32" stroke="#176bdf" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Outer Floating Bubbles -->
+  <circle cx="36" cy="28" r="3.5" fill="#0ea5e9" opacity="0.2" stroke="#0ea5e9" stroke-width="1" stroke-opacity="0.3"/>
+  <circle cx="38" cy="23" r="2" fill="#0ea5e9" opacity="0.15" stroke="#0ea5e9" stroke-width="0.8" stroke-opacity="0.2"/>
+  <circle cx="11" cy="24" r="2.5" fill="#176bdf" opacity="0.15" stroke="#176bdf" stroke-width="0.8" stroke-opacity="0.2"/>
+
+  <!-- Brightness Sparkles -->
+  <!-- Top Right Sparkle -->
+  <path d="M 37,5 L 38.5,9.5 L 43,11 L 38.5,12.5 L 37,17 L 35.5,12.5 L 31,11 L 35.5,9.5 Z" fill="url(#sparkleGrad)"/>
   
-  <!-- Brightness/freshness indicator -->
-  <circle cx="38" cy="12" r="3" fill="#ffd766" opacity="0.9"/>
-  <g stroke="#ffd766" stroke-width="1.5" stroke-linecap="round" opacity="0.7">
-    <line x1="38" y1="6" x2="38" y2="4"/>
-    <line x1="38" y1="20" x2="38" y2="22"/>
-    <line x1="44" y1="12" x2="46" y2="12"/>
-    <line x1="32" y1="12" x2="30" y2="12"/>
-  </g>
+  <!-- Small Sparkle Bottom Left -->
+  <path d="M 10,33 L 11,35.5 L 13.5,36.5 L 11,37.5 L 10,40 L 9,37.5 L 6.5,36.5 L 9,35.5 Z" fill="url(#sparkleGrad)" opacity="0.8"/>
 </svg>

@@ -207,9 +207,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // by marking them with a bidi-isolation class.
     el.classList.add('bidi-ltr', 'inline-block');
     let x = 0;
+    const suffix = el.getAttribute('data-suffix') || '';
+    const useCommas = el.hasAttribute('data-commas');
     const tick = () => {
       x += Math.ceil(n / 60);
-      el.textContent = String(Math.min(x, n));
+      const currentVal = Math.min(x, n);
+      const formattedVal = useCommas ? currentVal.toLocaleString() : String(currentVal);
+      el.textContent = formattedVal + suffix;
       if (x < n) requestAnimationFrame(tick);
     };
     new IntersectionObserver(

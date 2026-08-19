@@ -1,5 +1,4 @@
-﻿  <!doctype html>
-  <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -24,7 +23,17 @@
     />
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
-      <link rel="icon" type="image/svg+xml" href="assets/images/logo-new.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo-new.svg" />
+    <style>
+      /* Redesigned hover effect for the Contact button in service cards */
+      .service-card a[href="contact.html"]:hover {
+        background-color: rgba(23, 107, 223, 0.08) !important;
+        color: var(--brand) !important;
+        -webkit-text-fill-color: var(--brand) !important;
+        border-color: var(--brand) !important;
+        box-shadow: 0 4px 12px rgba(23, 107, 223, 0.1) !important;
+      }
+    </style>
 </head>
   <body>
     <div class="page-loader"><div class="loader-dot"></div></div>
@@ -115,18 +124,14 @@
                   >Explore services <i class="fa-solid fa-grid-2 ms-2"></i
                 ></a>
               </div>
-              <div class="d-flex gap-4 mt-5">
-                <div>
-                  <b class="fs-4" data-counter="15000">0</b
-                  ><span class="d-block small text-secondary"
-                    >Happy households</span
-                  >
+              <div class="d-flex gap-4 mt-5 pt-4 border-top" style="border-color: var(--line) !important;">
+                <div class="pe-4 border-end" style="border-color: var(--line) !important;">
+                  <div class="fs-1 text-brand lh-1 mb-1" style="font-weight: 800;" data-counter="15000" data-suffix="+" data-commas>0+</div>
+                  <span class="d-block small text-secondary fw-semibold">Happy households</span>
                 </div>
-                <div>
-                  <b class="fs-4" data-counter="98">0</b
-                  ><span class="d-block small text-secondary"
-                    >On-time delivery %</span
-                  >
+                <div class="ps-2">
+                  <div class="fs-1 text-brand lh-1 mb-1" style="font-weight: 800;" data-counter="98" data-suffix="%">0%</div>
+                  <span class="d-block small text-secondary fw-semibold">On-time delivery</span>
                 </div>
               </div>
             </div>
@@ -171,9 +176,11 @@
                 <p class="text-secondary">
                   Everyday garments cleaned, folded and packaged with care.
                 </p>
-                <b>From ₹79 / kg</b
-                ><span class="float-end text-brand">24–48 hrs</span>
-                <div class="d-flex gap-2 mt-4">
+                <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                  <b>From ₹79 / kg</b>
+                  <span class="text-brand">24–48 hrs</span>
+                </div>
+                <div class="d-flex gap-2 mt-3">
                   <a href="booking.html" class="btn btn-brand flex-grow-1">Book Service</a>
                   <a href="contact.html" class="btn btn-outline-brand">Contact</a>
                 </div>
@@ -190,9 +197,11 @@
                 <p class="text-secondary">
                   Specialist treatment for delicate and tailored pieces.
                 </p>
-                <b>From ₹149 / item</b
-                ><span class="float-end text-brand">2–3 days</span>
-                <div class="d-flex gap-2 mt-4">
+                <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                  <b>From ₹149 / item</b>
+                  <span class="text-brand">2–3 days</span>
+                </div>
+                <div class="d-flex gap-2 mt-3">
                   <a href="booking.html" class="btn btn-brand flex-grow-1">Book Service</a>
                   <a href="contact.html" class="btn btn-outline-brand">Contact</a>
                 </div>
@@ -209,9 +218,11 @@
                 <p class="text-secondary">
                   Deep cleaning for larger home textiles.
                 </p>
-                <b>From ₹249 / kg</b
-                ><span class="float-end text-brand">3–4 days</span>
-                <div class="d-flex gap-2 mt-4">
+                <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                  <b>From ₹249 / kg</b>
+                  <span class="text-brand">3–4 days</span>
+                </div>
+                <div class="d-flex gap-2 mt-3">
                   <a href="booking.html" class="btn btn-brand flex-grow-1">Book Service</a>
                   <a href="contact.html" class="btn btn-outline-brand">Contact</a>
                 </div>

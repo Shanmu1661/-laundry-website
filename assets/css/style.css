@@ -1,6 +1,6 @@
 /* LaundryPro — shared design system */
 :root{--brand:#176bdf;--ink:#10213c;--muted:#68758b;--soft:#f4f8ff;--line:#e5ebf4;--white:#fff;--shadow:0 18px 45px rgba(22,60,117,.10)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;padding-top:80px}body.dark{--ink:#e8f0fc;--muted:#aab9cd;--soft:#101c2e;--line:#243652;--white:#0b1423;background:#0b1423}.serif{font-family:Manrope,sans-serif}.text-brand{color:var(--brand)}.bg-soft{background:var(--soft)}.section{padding:100px 0}.section-title{font-weight:800;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.05em}.eyebrow{color:var(--brand);font-size:.78rem;text-transform:uppercase;font-weight:800;letter-spacing:.13em}.navbar{transition:.3s;padding:18px 0}.navbar.scrolled{padding:10px 0;background:color-mix(in srgb,var(--white) 92%,transparent)!important;backdrop-filter:blur(15px);box-shadow:0 4px 25px rgba(8,30,70,.07)}.navbar-brand{font-weight:900;font-size:1.5rem;color:var(--ink)!important}.nav-link{font-weight:600;color:var(--ink)!important}.btn-brand{background:var(--brand);color:white;border-radius:10px;padding:.75rem 1.2rem;border:0;font-weight:700}.btn-brand:hover{background:#105ac2;color:#fff;transform:translateY(-2px)}.btn-outline-brand{border:1px solid var(--brand);border-radius:10px;background:transparent;color:var(--brand);font-weight:700}.btn-outline-brand:hover{background:var(--brand);border-color:var(--brand);color:#fff;transform:translateY(-2px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;padding-top:80px}body.dark{--ink:#e8f0fc;--muted:#aab9cd;--soft:#101c2e;--line:#243652;--white:#0b1423;background:#0b1423}.serif{font-family:Manrope,sans-serif}.text-brand{color:var(--brand)}.bg-soft{background:var(--soft)}.section{padding:100px 0}.section-title{font-weight:800;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.05em}.eyebrow{color:var(--brand);font-size:.78rem;text-transform:uppercase;font-weight:800;letter-spacing:.13em}.navbar{transition:.3s;padding:18px 0}.navbar.scrolled{padding:10px 0;background:color-mix(in srgb,var(--white) 92%,transparent)!important;backdrop-filter:blur(15px);box-shadow:0 4px 25px rgba(8,30,70,.07)}.navbar-brand{font-weight:900;font-size:1.5rem;color:var(--ink)!important}.nav-link{font-weight:600;color:var(--ink)!important}.btn-brand{background:var(--brand);color:white;border-radius:10px;padding:.75rem 1.2rem;border:0;font-weight:700}.btn-brand:hover{background:#105ac2;color:#fff;transform:translateY(-2px)}.btn-outline-brand{border:1px solid var(--brand);border-radius:10px;background:transparent;color:var(--brand);font-weight:700}.btn-outline-brand:hover{background:var(--brand);border-color:var(--brand);color:#fff !important;-webkit-text-fill-color:#fff !important;transform:translateY(-2px)}
 .btn-brand:active, .btn-brand:focus {
   background: #105ac2 !important;
   color: #fff !important;
@@ -344,7 +344,16 @@ html[dir="rtl"] .accordion-body {
 .filter-item .service-card .text-secondary{color:rgba(255,255,255,.88)!important;text-shadow:0 1px 3px rgba(0,0,0,.35)}
 .filter-item .service-card .service-icon{background:rgba(255,255,255,.9);box-shadow:0 8px 20px rgba(4,22,50,.18)}
 .filter-item .service-card .btn-outline-brand{color:#fff;border-color:rgba(255,255,255,.82);background:rgba(255,255,255,.12);backdrop-filter:blur(6px)}
-.filter-item .service-card .btn-outline-brand:hover{color:var(--brand);background:#fff;border-color:#fff}
+.filter-item .service-card .btn-outline-brand:hover,
+.filter-item .service-card .btn-outline-brand:focus,
+.filter-item .service-card .btn-outline-brand:active {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.82) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
 .filter-item:nth-child(1) .service-card{background-image:url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=900&q=80')}
 .filter-item:nth-child(2) .service-card{background-image:url('https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=900&q=80')}
 .filter-item:nth-child(3) .service-card{background-image:url('https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=900&q=80')}
@@ -1191,4 +1200,51 @@ body.dark .blog-detail-page .article-side-list a{
   .blog-detail-page .article-summary-grid{
     grid-template-columns:1fr;
   }
+}
+
+/* Service filter buttons active toggle style */
+.btn-outline-brand.active,
+.btn-outline-brand.active:hover,
+.btn-outline-brand.active:focus {
+  background-color: var(--brand) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  border-color: var(--brand) !important;
+  box-shadow: 0 8px 16px rgba(23, 107, 223, 0.2) !important;
+}
+
+/* Redesigned About page styles */
+.timeline-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--brand);
+  background-color: rgba(23, 107, 223, 0.1);
+  border-radius: 20px;
+}
+body.dark .timeline-badge {
+  background-color: rgba(23, 107, 223, 0.2);
+  color: #9ecaff;
+}
+
+.team-card {
+  background-color: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: #9dc6ff;
+}
+
+/* Redesigned hover effect for the Contact button in service cards */
+.service-card a[href="contact.html"]:hover {
+  background-color: rgba(23, 107, 223, 0.08) !important;
+  color: var(--brand) !important;
+  -webkit-text-fill-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+  box-shadow: 0 4px 12px rgba(23, 107, 223, 0.1) !important;
 }
