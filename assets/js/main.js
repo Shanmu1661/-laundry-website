@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menu = document.createElement('ul');
     menu.className = 'dropdown-menu';
     menu.innerHTML = `
-      <li><a class="dropdown-item" href="index.html">Home</a></li>
+      <li><a class="dropdown-item" href="index.html">Home 1</a></li>
       <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
     `;
 

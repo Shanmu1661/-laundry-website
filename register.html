@@ -158,6 +158,34 @@
           font-size: 1.45rem;
         }
       }
+
+      /* Dark Mode Styles */
+      body.dark.register-page {
+        background: radial-gradient(circle at 12% 15%,rgba(40,112,210,.24),transparent 28%),radial-gradient(circle at 88% 82%,rgba(35,144,128,.18),transparent 25%),#0b1423 !important;
+      }
+      body.dark.register-page .login-card {
+        background: rgba(16, 28, 46, 0.9) !important;
+        border-color: #243652 !important;
+      }
+      body.dark.register-page .form-control {
+        background: #07111f !important;
+        color: #e8f0fc !important;
+        border-color: #243652 !important;
+      }
+      body.dark.register-page .form-control:focus {
+        background: #07111f !important;
+        color: #e8f0fc !important;
+        box-shadow: 0 0 0 .22rem rgba(23, 107, 223, .25) !important;
+      }
+      body.dark.register-page .auth-toggle-group [data-theme],
+      body.dark.register-page .auth-toggle-group [data-direction] {
+        background: rgba(16, 28, 46, 0.82) !important;
+        border-color: #36557c !important;
+        color: #9ecaff !important;
+      }
+      body.dark.register-page .text-secondary {
+        color: var(--muted) !important;
+      }
     </style>
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-new.svg" />
   </head>
