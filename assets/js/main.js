@@ -153,7 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
     theme?.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
     theme?.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
   };
-  const savedTheme = localStorage.getItem('laundryProTheme');
+  let savedTheme = localStorage.getItem('laundryProTheme');
+  if (!savedTheme) {
+    savedTheme = 'light';
+    localStorage.setItem('laundryProTheme', 'light');
+  }
   document.body.classList.toggle('dark', savedTheme === 'dark');
   syncTheme();
   theme?.addEventListener('click', () => {
