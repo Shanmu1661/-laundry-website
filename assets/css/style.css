@@ -348,7 +348,7 @@ html[dir="rtl"] .accordion-body {
 
 
 /* Shared footer copyright notice */
-.footer-copyright{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(184,198,219,.24);color:#b8c6db;text-align:center}
+.footer-copyright{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(184,198,219,.24);color:#b8c6db !important;text-align:center}
 
 
 /* Individual service-card backgrounds */
